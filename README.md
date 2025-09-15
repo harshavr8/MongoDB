@@ -29,7 +29,7 @@ Run the example queries:
 Run the 5 SQL queries provided in sql/queries.sql:
 ```
 sqlite3 -header -column cricket.db < sql/queries.sql
-
+```
 
 Or run each query individually:
 ```
@@ -38,7 +38,7 @@ sqlite3 -header -column cricket.db "SELECT name, matches, runs FROM players WHER
 sqlite3 -header -column cricket.db "SELECT name, runs FROM players ORDER BY runs DESC LIMIT 1;"
 sqlite3 -header -column cricket.db "SELECT name, runs, wickets FROM players WHERE role = 'All-rounder' AND wickets > 50;"
 sqlite3 -header -column cricket.db "SELECT AVG(runs) AS avg_runs FROM players;"
-
+```
 
 These queries demonstrate:
 
@@ -51,3 +51,23 @@ Retrieving the top scorer
 Finding all-rounders with >50 wickets
 
 Calculating the average runs of the team
+
+Notes
+
+.DS_Store and cricket.db are ignored in Git via .gitignore.
+
+The MongoDB and SQLite datasets represent the same 5 cricket players:
+
+Rohit Sharma
+
+Virat Kohli
+
+Jasprit Bumrah
+
+Hardik Pandya
+
+Ravindra Jadeja
+
+Make sure MongoDB is running before importing.
+
+SQLite commands are tested on SQLite version 3.x.
